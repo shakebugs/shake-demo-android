@@ -13,22 +13,7 @@ import com.shakebugs.demo.R
 
 class MainAdapter(private val stepsList: ArrayList<Steps>) : RecyclerView.Adapter<MainAdapter.StepsViewHolder>() {
 
-    private lateinit var mListener: onItemClickListener
-
-    class StepsViewHolder(itemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
-
-        val number : ImageView = itemView.findViewById(R.id.number_fg)
-        val circle : ImageView = itemView.findViewById(R.id.circle_bg)
-        val step : TextView = itemView.findViewById(R.id.shake_step)
-
-        init {
-            itemView.setOnClickListener {
-                listener.onItemClick(absoluteAdapterPosition)
-            }
-        }
-
-    }
-
+    private var mListener: onItemClickListener? = null
 
     interface onItemClickListener {
         fun onItemClick(position: Int)
@@ -37,7 +22,6 @@ class MainAdapter(private val stepsList: ArrayList<Steps>) : RecyclerView.Adapte
     fun setOnClickListener(listener: onItemClickListener) {
         mListener = listener
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StepsViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.fragment_step, parent, false)
@@ -63,5 +47,19 @@ class MainAdapter(private val stepsList: ArrayList<Steps>) : RecyclerView.Adapte
         holder.circle.setImageResource(R.drawable.shake_circle_bg)
         holder.step.setText(currentItem.description)
         holder.step.setMovementMethod(LinkMovementMethod.getInstance())
+    }
+
+    class StepsViewHolder(itemView: View, listener: onItemClickListener?) : RecyclerView.ViewHolder(itemView) {
+
+        val number : ImageView = itemView.findViewById(R.id.number_fg)
+        val circle : ImageView = itemView.findViewById(R.id.circle_bg)
+        val step : TextView = itemView.findViewById(R.id.shake_step)
+
+        init {
+            itemView.setOnClickListener {
+                listener?.onItemClick(absoluteAdapterPosition)
+            }
+        }
+
     }
 }
