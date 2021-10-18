@@ -1,6 +1,7 @@
 package com.shakebugs.demo
 
 import android.app.Application
+import com.shakebugs.demo.BuildConfig
 import com.shakebugs.shake.Shake
 
 class ShakeDemoApp : Application() {
@@ -27,7 +28,7 @@ class ShakeDemoApp : Application() {
         Shake.getReportConfiguration().isFeedbackTypeEnabled = false
         Shake.setShowIntroMessage(true)
 
-        Shake.start(this, "test", "test")
+        Shake.start(this, BuildConfig.CLIENT_ID, BuildConfig.CLIENT_SECRET)
 
     }
 }

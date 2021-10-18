@@ -17,8 +17,12 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -31,6 +35,16 @@ android {
     }
     buildFeatures {
         viewBinding true
+    }
+
+    flavorDimensions "environment"
+
+    productFlavors {
+        playStore {
+            dimension "environment"
+            buildConfigField "String", "CLIENT_ID", '"lEtd511X2gn3qsgR1RWPVEL15RpKbdY0r6x99LFP"'
+            buildConfigField "String", "CLIENT_SECRET", '"nErTSH6tgNB1dMDAQKQaMNA1d8yD8tEDl82XPrYQEucvG9vFy89JqWZ"'
+        }
     }
 }
 
