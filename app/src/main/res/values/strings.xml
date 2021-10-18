@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Shake SDK demo app</string>
-    <!-- Settings Activity Title -->
-    <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
     <string name="settings_invocations">Shake SDK is invoked with</string>
@@ -19,34 +17,20 @@
 
     <string name="settings_bottom_text">The customizations are simple so you get the idea. Visit www.shakebugs.com/docs to read how to tweak dozens of things to your needs: From custom logs and variables to managing sensitive data.</string>
 
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
+    <!-- Action menu -->
     <string name="action_settings">SDK settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_welcome">Hi, try shaking</string>
+    <string name="menu_customize">Customizing Shake</string>
+    <string name="menu_crash">Crash reporting</string>
+    <string name="menu_feedback">Feedback center</string>
 
     <string name="try_this">Now try this ✨</string>
     <string name="welcome_try_this_1">Shake your phone → write anything and tap Submit</string>
     <string name="welcome_try_this_2">On your computer visit <a href="https://shk.sh/demo">shk.sh/demo</a> to see how your submitted ticket looks like. Shake SDK has attached all that data automatically!</string>
     <string name="customize_try_this_1">Tap  ⋮  in the top right corner → SDK settings → change a thing or two</string>
     <string name="customize_try_this_2">Invoke Shake to see how it has changed</string>
-    <string name="crash_try_this_1">Tap me to crash this app for fun</string>
+    <string name="crash_try_this_1"><u>Tap me</u> to crash this app for fun</string>
     <string name="crash_try_this_2">On your computer visit shk.sh/demo to see how your crash report looks like. Shake SDK has attached all that data   automatically !</string>
 
     <string name="welcome_title">Welcome to Shake demo app</string>

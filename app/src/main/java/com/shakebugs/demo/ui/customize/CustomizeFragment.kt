@@ -32,6 +32,7 @@ class CustomizeFragment : Fragment() {
     ): View? {
         _binding = FragmentCustomizeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        root.setBackgroundColor(resources.getColor(R.color.shake_color_primary))
 
         iconId = arrayOf(
             R.drawable.ic_one,
@@ -59,7 +60,7 @@ class CustomizeFragment : Fragment() {
 
     private fun getSteps() {
         for (i in iconId.indices) {
-            val step = Steps(iconId[i], description[i], Color.parseColor("#d75ed7"))
+            val step = Steps(iconId[i], description[i], Color.parseColor("#ff9f0a"))
             newArrayList.add(step)
         }
 

@@ -34,8 +34,8 @@ class SettingsActivity : AppCompatActivity() {
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-            setDisplayShowTitleEnabled(false);
-            setTheme(R.style.shake_AppTheme)
+            setDisplayShowTitleEnabled(false)
+            setBackgroundDrawable(resources.getDrawable(R.color.shake_color_primary))
         }
 
         binding = SettingsActivityBinding.inflate(layoutInflater)

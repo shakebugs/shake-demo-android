@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.shakebugs.demo.R
 import com.shakebugs.demo.databinding.FragmentFeedbackBinding
 import com.shakebugs.shake.Shake
 import com.shakebugs.shake.ShakeScreen
@@ -24,6 +25,7 @@ class FeedbackFragment : Fragment() {
     ): View? {
         _binding = FragmentFeedbackBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        root.setBackgroundColor(resources.getColor(R.color.shake_color_primary))
 
         binding.feedbackAccountLayout3.setOnClickListener {
             Shake.show(ShakeScreen.HOME)

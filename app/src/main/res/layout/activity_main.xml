@@ -20,6 +20,11 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        android:theme="@style/NavigationTheme"
+        android:background="@color/shake_color_primary"
         app:headerLayout="@layout/nav_header_main"
+        app:itemTextAppearance="@style/shake_sdk_Subtitle1"
+        app:itemTextColor="@color/shake_body_color"
+        app:itemBackground="@drawable/drawer_selected_item"
         app:menu="@menu/activity_main_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>

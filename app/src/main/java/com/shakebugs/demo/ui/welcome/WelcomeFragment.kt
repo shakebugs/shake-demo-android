@@ -1,12 +1,15 @@
 package com.shakebugs.demo.ui.welcome
 
+import android.annotation.SuppressLint
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +30,7 @@ class WelcomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,6 +39,7 @@ class WelcomeFragment : Fragment() {
 
         _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        root.setBackgroundColor(resources.getColor(R.color.shake_color_primary))
 
         iconId = arrayOf(
             R.drawable.ic_one,

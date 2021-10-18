@@ -1,10 +1,12 @@
 package com.shakebugs.demo.ui
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
+import androidx.annotation.RequiresApi
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.root.setBackgroundColor(resources.getColor(R.color.shake_color_primary))
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
@@ -33,6 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
+        navView.itemIconTintList = null
+
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
         // Passing each menu ID as a set of Ids because each
