@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/step_holder"
+    android:background="@android:color/transparent"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -7,16 +9,19 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:layout_gravity="center">
 
         <ImageView
             android:id="@+id/circle_bg"
             android:layout_width="45dp"
             android:layout_height="45dp"
+            android:background="@android:color/transparent"
             android:src="@drawable/shake_circle_bg"></ImageView>
 
         <ImageView
             android:id="@+id/number_fg"
+            android:background="@android:color/transparent"
             android:layout_width="27dp"
             android:layout_height="27dp"
             android:layout_centerInParent="true"
@@ -28,6 +33,7 @@
         style="@style/shake_Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:textColorLink="@color/link_color"
         android:autoLink="web"
         android:padding="10dp"/>

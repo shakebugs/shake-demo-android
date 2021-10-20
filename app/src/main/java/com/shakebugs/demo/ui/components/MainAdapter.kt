@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -46,7 +48,8 @@ class MainAdapter(private val stepsList: ArrayList<Steps>) : RecyclerView.Adapte
         holder.number.setImageResource(currentItem.icon)
         holder.circle.setImageResource(R.drawable.shake_circle_bg)
         holder.step.setText(currentItem.description)
-        holder.step.setMovementMethod(LinkMovementMethod.getInstance())
+        holder.step.movementMethod = LinkMovementMethod.getInstance()
+
     }
 
     class StepsViewHolder(itemView: View, listener: onItemClickListener?) : RecyclerView.ViewHolder(itemView) {
@@ -56,7 +59,7 @@ class MainAdapter(private val stepsList: ArrayList<Steps>) : RecyclerView.Adapte
         val step : TextView = itemView.findViewById(R.id.shake_step)
 
         init {
-            itemView.setOnClickListener {
+            step.setOnClickListener {
                 listener?.onItemClick(absoluteAdapterPosition)
             }
         }
