@@ -9,12 +9,10 @@
         android:id="@+id/nav_welcome"
         android:name="com.shakebugs.demo.ui.welcome.WelcomeFragment"
         tools:layout="@layout/fragment_welcome" />
-
     <fragment
         android:id="@+id/nav_customize"
         android:name="com.shakebugs.demo.ui.customize.CustomizeFragment"
         tools:layout="@layout/fragment_customize" />
-
     <fragment
         android:id="@+id/nav_crash"
         android:name="com.shakebugs.demo.ui.crash.CrashFragment"

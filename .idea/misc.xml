@@ -3,12 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/drawer_selected_item.xml" value="0.4" />
         <entry key="app/src/main/res/drawable/ic_crash_reporting.xml" value="0.36770833333333336" />
         <entry key="app/src/main/res/drawable/ic_customizing.xml" value="0.36770833333333336" />
         <entry key="app/src/main/res/drawable/ic_feedback_center.xml" value="0.36770833333333336" />
+        <entry key="app/src/main/res/drawable/ic_one.xml" value="0.4" />
+        <entry key="app/src/main/res/drawable/ic_shake_logo.xml" value="0.4" />
         <entry key="app/src/main/res/drawable/ic_shaking.xml" value="0.36770833333333336" />
         <entry key="app/src/main/res/drawable/shake_circle_bg.xml" value="0.36770833333333336" />
+        <entry key="app/src/main/res/drawable/shake_component_panel_bg.xml" value="0.4" />
         <entry key="app/src/main/res/drawable/shake_logo.xml" value="0.36770833333333336" />
+        <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.4" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.34103260869565216" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.34103260869565216" />

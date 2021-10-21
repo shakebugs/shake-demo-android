@@ -1,45 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#1C1C1E</color>
-    <color name="white">#FFFFFFFF</color>
-
-    <color name="title_color">#f2f2f7</color>
     <color name="link_color">#FFFFFF</color>
 
     <!-- Main -->
     <color name="shake_color_primary">#1c1c1e</color>
     <color name="shake_color_secondary">#2c2c2e</color>
-    <color name="shake_color_accent">#6552FF</color>
 
     <!-- Text -->
     <color name="shake_headline_color">#f2f2f7</color>
     <color name="shake_subtitle_color">#8e8e93</color>
     <color name="shake_body_color">#D1D1D6</color>
-    <color name="shake_error_color">#EB5757</color>
-
-    <!-- Button -->
-    <color name="shake_button_text_color_value">#F2F2F7</color>
-    <color name="shake_button_disabled_text_color_value">#F2F2F7</color>
-    <color name="shake_button_secondary_text_color_value">#F2F2F7</color>
-    <color name="shake_button_secondary_disabled_text_color_value">#F2F2F7</color>
 
     <!-- Components -->
-    <color name="shake_component_input_stroke_color">#636366</color>
-    <color name="shake_component_input_cursor_color">#038EFF</color>
-    <color name="shake_component_input_selection_color">#A6C1D6</color>
     <color name="shake_component_option_stroke_color">#48484A</color>
-
-    <!-- Icons -->
-    <color name="shake_icon_color_primary">#f2f2f7</color>
-    <color name="shake_icon_color_secondary">#AEAEB2</color>
-    <color name="shake_icon_color_tertiary">#3A3A3C</color>
-
-    <!-- Generic -->
-    <color name="shake_white">#FFFFFF</color>
-    <color name="shake_red">#FF3F43</color>
-    <color name="shake_transparent">@android:color/transparent</color>
-
-    <!-- Screen recording -->
-    <color name="shake_screen_recording_icon">#EB5757</color>
 
 </resources>
