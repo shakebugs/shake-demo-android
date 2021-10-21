@@ -40,13 +40,15 @@
             android:background="@drawable/shake_component_panel_bg">
             <LinearLayout
                 android:orientation="horizontal"
+                android:background="@android:color/transparent"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="@dimen/settings_layout_height">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@android:color/transparent"
                     android:text="@string/invocation_shaking" />
 
                 <androidx.appcompat.widget.SwitchCompat
@@ -57,15 +59,17 @@
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
+                android:background="@android:color/transparent"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="@dimen/settings_layout_height">
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@android:color/transparent"
                     android:text="@string/invocation_screenshot" />
 
                 <androidx.appcompat.widget.SwitchCompat
@@ -76,15 +80,17 @@
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
+                android:background="@android:color/transparent"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="@dimen/settings_layout_height">
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@android:color/transparent"
                     android:text="@string/invocation_button"/>
 
                 <androidx.appcompat.widget.SwitchCompat
@@ -118,13 +124,15 @@
                 android:background="@drawable/shake_component_panel_bg">
                 <LinearLayout
                     android:orientation="horizontal"
+                    android:background="@android:color/transparent"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/settings_layout_height">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:text="@string/contains_feedback_type" />
 
                     <androidx.appcompat.widget.SwitchCompat
@@ -135,15 +143,17 @@
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
+                    android:background="@android:color/transparent"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/settings_layout_height">
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:text="@string/contains_email" />
 
                     <androidx.appcompat.widget.SwitchCompat
@@ -154,15 +164,17 @@
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
+                    android:background="@android:color/transparent"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/settings_layout_height">
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:text="@string/contains_inspect"/>
 
                     <androidx.appcompat.widget.SwitchCompat
@@ -196,13 +208,15 @@
                 android:background="@drawable/shake_component_panel_bg">
                 <LinearLayout
                     android:orientation="horizontal"
+                    android:background="@android:color/transparent"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/settings_layout_height">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:text="@string/data_screenshot" />
 
                     <androidx.appcompat.widget.SwitchCompat
