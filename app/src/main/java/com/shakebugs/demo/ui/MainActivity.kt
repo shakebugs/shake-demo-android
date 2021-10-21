@@ -1,5 +1,6 @@
 package com.shakebugs.demo.ui
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> {
                 val intent = Intent(this, SettingsActivity::class.java)
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left)
                 return true
             }
         }
