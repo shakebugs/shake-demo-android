@@ -92,14 +92,17 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
-        overridePendingTransition(R.anim.slide_in_from_left, R.anim.slide_out_to_right)
         return true
     }
-
 
     override fun dispatchTouchEvent(event: MotionEvent): Boolean {
         Shake.handleTouchEvent(event, this)
         return super.dispatchTouchEvent(event)
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_in_from_left, R.anim.slide_out_to_right)
     }
 
 }
