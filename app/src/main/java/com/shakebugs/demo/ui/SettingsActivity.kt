@@ -39,6 +39,7 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         binding = SettingsActivityBinding.inflate(layoutInflater)
+        binding.root.setBackgroundColor(resources.getColor(R.color.shake_color_primary))
         setContentView(binding.root)
 
         Shake.addPrivateView(this)
