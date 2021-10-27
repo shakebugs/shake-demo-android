@@ -37,6 +37,18 @@ android {
         viewBinding true
     }
 
+    signingConfigs {
+        release {
+            Properties localProps = new Properties()
+            localProps.load(new FileInputStream(file('../local.properties')))
+
+            storeFile file('demo-release.jks')
+            keyPassword localProps['keyPassword']
+            keyAlias localProps['keyAlias']
+            storePassword localProps['storePassword']
+        }
+    }
+
     flavorDimensions "environment"
 
     productFlavors {
