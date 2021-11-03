@@ -5,11 +5,12 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:statusBarColor">@color/shake_color_primary</item>
         <item name="android:colorAccent">@color/shake_color_primary</item>
-        <item name="android:background">@color/shake_color_primary</item>
+        <item name="backgroundColor">@color/shake_color_primary</item>
+        <item name="background">@color/shake_color_primary</item>
         <item name="android:colorEdgeEffect">@color/shake_color_primary</item>
     </style>
 
-    <style name="shake_AppTheme.NoActionBar">
+    <style name="shake_AppTheme.NoActionBar" parent="Theme.MaterialComponents.DayNight">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
