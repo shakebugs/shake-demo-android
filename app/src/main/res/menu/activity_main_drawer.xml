@@ -20,5 +20,9 @@
             android:id="@+id/nav_feedback"
             android:icon="@drawable/ic_feedback_center"
             android:title="@string/menu_feedback" />
+        <item
+            android:id="@+id/nav_offline"
+            android:icon="@drawable/ic_offline"
+            android:title="@string/menu_offline" />
     </group>
 </menu>

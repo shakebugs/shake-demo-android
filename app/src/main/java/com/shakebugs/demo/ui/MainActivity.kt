@@ -1,13 +1,10 @@
 package com.shakebugs.demo.ui
 
-import android.app.ActivityOptions
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
-import androidx.annotation.RequiresApi
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -29,11 +26,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        binding.root.setBackgroundColor(resources.getColor(R.color.shake_color_primary))
+        binding.root.setBackgroundColor(applicationContext.getColor(R.color.shake_color_primary))
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false);
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -41,11 +38,9 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_welcome, R.id.nav_customize, R.id.nav_crash, R.id.nav_feedback
+                R.id.nav_welcome, R.id.nav_customize, R.id.nav_crash, R.id.nav_feedback, R.id.nav_offline
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -1,15 +1,12 @@
 package com.shakebugs.demo.ui.welcome
 
-import android.annotation.SuppressLint
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,23 +20,19 @@ class WelcomeFragment : Fragment() {
     private lateinit var newRecyclerView: RecyclerView
     private lateinit var newArrayList: ArrayList<Steps>
     private var _binding: FragmentWelcomeBinding? = null
-    lateinit var iconId: Array<Int>
-    lateinit var description: Array<Int>
+    private lateinit var iconId: Array<Int>
+    private lateinit var description: Array<Int>
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
+    ): View {
         _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        root.setBackgroundColor(resources.getColor(R.color.shake_color_primary))
+        context?.let { root.setBackgroundColor(it.getColor(R.color.shake_color_primary)) }
 
         iconId = arrayOf(
             R.drawable.ic_one,
@@ -53,12 +46,13 @@ class WelcomeFragment : Fragment() {
         newRecyclerView = binding.welcomeRecyclerView
         newRecyclerView.layoutManager = LinearLayoutManager(this.activity)
         newRecyclerView.setHasFixedSize(true)
+        newRecyclerView.isNestedScrollingEnabled = false
 
-        newArrayList = arrayListOf<Steps>()
+        newArrayList = arrayListOf()
         getSteps()
 
         val learnMoreText: TextView = binding.welcomeLearnMore
-        learnMoreText.setMovementMethod(LinkMovementMethod.getInstance())
+        learnMoreText.movementMethod = LinkMovementMethod.getInstance()
         return root
     }
 

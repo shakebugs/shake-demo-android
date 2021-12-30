@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -15,13 +13,13 @@ import com.shakebugs.demo.R
 
 class MainAdapter(private val stepsList: ArrayList<Steps>) : RecyclerView.Adapter<MainAdapter.StepsViewHolder>() {
 
-    private var mListener: onItemClickListener? = null
+    private var mListener: OnItemClickListener? = null
 
-    interface onItemClickListener {
+    interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
 
-    fun setOnClickListener(listener: onItemClickListener) {
+    fun setOnClickListener(listener: OnItemClickListener) {
         mListener = listener
     }
 
@@ -52,7 +50,7 @@ class MainAdapter(private val stepsList: ArrayList<Steps>) : RecyclerView.Adapte
 
     }
 
-    class StepsViewHolder(itemView: View, listener: onItemClickListener?) : RecyclerView.ViewHolder(itemView) {
+    class StepsViewHolder(itemView: View, listener: OnItemClickListener?) : RecyclerView.ViewHolder(itemView) {
 
         val number : ImageView = itemView.findViewById(R.id.number_fg)
         val circle : ImageView = itemView.findViewById(R.id.circle_bg)

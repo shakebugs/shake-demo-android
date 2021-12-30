@@ -18,21 +18,19 @@ class CustomizeFragment : Fragment() {
     private lateinit var newRecyclerView: RecyclerView
     private lateinit var newArrayList: ArrayList<Steps>
     private var _binding: FragmentCustomizeBinding? = null
-    lateinit var iconId: Array<Int>
-    lateinit var description: Array<Int>
+    private lateinit var iconId: Array<Int>
+    private lateinit var description: Array<Int>
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCustomizeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        root.setBackgroundColor(resources.getColor(R.color.shake_color_primary))
+        context?.let { root.setBackgroundColor(it.getColor(R.color.shake_color_primary)) }
 
         iconId = arrayOf(
             R.drawable.ic_one,
@@ -46,8 +44,9 @@ class CustomizeFragment : Fragment() {
         newRecyclerView = binding.customizeRecyclerView
         newRecyclerView.layoutManager = LinearLayoutManager(this.activity)
         newRecyclerView.setHasFixedSize(true)
+        newRecyclerView.isNestedScrollingEnabled = false
 
-        newArrayList = arrayListOf<Steps>()
+        newArrayList = arrayListOf()
         getSteps()
 
         return root

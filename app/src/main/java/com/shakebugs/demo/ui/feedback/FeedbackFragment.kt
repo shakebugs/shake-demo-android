@@ -14,18 +14,16 @@ class FeedbackFragment : Fragment() {
 
     private var _binding: FragmentFeedbackBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentFeedbackBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        root.setBackgroundColor(resources.getColor(R.color.shake_color_primary))
+        context?.let { root.setBackgroundColor(it.getColor(R.color.shake_color_primary)) }
 
         binding.feedbackAccountLayout3.setOnClickListener {
             Shake.show(ShakeScreen.HOME)

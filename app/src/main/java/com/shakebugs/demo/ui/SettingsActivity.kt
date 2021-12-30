@@ -3,30 +3,29 @@ package com.shakebugs.demo.ui
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
+import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import com.shakebugs.demo.R
 import com.shakebugs.demo.databinding.SettingsActivityBinding
+import com.shakebugs.demo.utils.PreferenceUtils
 import com.shakebugs.shake.Shake
-
-import android.widget.CompoundButton
-
-
 
 
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: SettingsActivityBinding
 
-    lateinit var invokeShaking : SwitchCompat
-    lateinit var invokeScreenshot : SwitchCompat
-    lateinit var invokeButton : SwitchCompat
+    private lateinit var invokeShaking : SwitchCompat
+    private lateinit var shakingThreshold : SeekBar
+    private lateinit var invokeScreenshot : SwitchCompat
+    private lateinit var invokeButton : SwitchCompat
 
-    lateinit var feedbackType : SwitchCompat
-    lateinit var emailField : SwitchCompat
-    lateinit var inspectButton : SwitchCompat
+    private lateinit var feedbackType : SwitchCompat
+    private lateinit var emailField : SwitchCompat
+    private lateinit var inspectButton : SwitchCompat
 
-    lateinit var screenshot : SwitchCompat
+    private lateinit var screenshot : SwitchCompat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,32 +34,50 @@ class SettingsActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setDisplayShowTitleEnabled(false)
-            setBackgroundDrawable(resources.getDrawable(R.color.shake_color_primary))
+            setBackgroundDrawable(applicationContext.getDrawable(R.color.shake_color_primary))
         }
 
         binding = SettingsActivityBinding.inflate(layoutInflater)
-        binding.root.setBackgroundColor(resources.getColor(R.color.shake_color_primary))
+        binding.root.setBackgroundColor(applicationContext.getColor(R.color.shake_color_primary))
         setContentView(binding.root)
 
         Shake.addPrivateView(this)
+        val preferenceUtils = PreferenceUtils()
 
         invokeShaking = binding.settingsShaking
+        shakingThreshold = binding.settingsShakingThreshold
         invokeScreenshot = binding.settingsScreenshot
         invokeButton = binding.settingsButton
         invokeShaking.isChecked = Shake.getReportConfiguration().isInvokeShakeOnShakeDeviceEvent
         invokeShaking.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Shake invocation: $isChecked")
             Shake.getReportConfiguration().isInvokeShakeOnShakeDeviceEvent = isChecked
+            preferenceUtils.saveBoolean(this, PreferenceUtils.IS_INVOKED_BY_SHAKING, isChecked)
         }
+        shakingThreshold.progress = Shake.getReportConfiguration().shakingThreshold
+        shakingThreshold.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {}
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                Log.d("Settings", "Shake sensitivity is set to: ${seekBar!!.progress}")
+                Shake.getReportConfiguration().shakingThreshold = seekBar.progress
+                preferenceUtils.saveInt(applicationContext, PreferenceUtils.SHAKING_THRESHOLD, seekBar.progress)
+            }
+
+        })
         invokeScreenshot.isChecked = Shake.getReportConfiguration().isInvokeShakeOnScreenshot
         invokeScreenshot.setOnCheckedChangeListener { _, isChecked ->
-            Log.d("Settings", "Screenshoot invocation: $isChecked")
+            Log.d("Settings", "Screenshot invocation: $isChecked")
             Shake.getReportConfiguration().isInvokeShakeOnScreenshot = isChecked
+            preferenceUtils.saveBoolean(this, PreferenceUtils.IS_INVOKED_ON_SCREENSHOT, isChecked)
         }
         invokeButton.isChecked = Shake.getReportConfiguration().isShowFloatingReportButton
         invokeButton.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Button invocation: $isChecked")
             Shake.getReportConfiguration().isShowFloatingReportButton = isChecked
+            preferenceUtils.saveBoolean(this, PreferenceUtils.IS_FLOATING_BUTTON_SHOWN, isChecked)
         }
 
         feedbackType = binding.settingsFeedbackType
@@ -70,23 +87,27 @@ class SettingsActivity : AppCompatActivity() {
         feedbackType.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Feedback types: $isChecked")
             Shake.getReportConfiguration().isFeedbackTypeEnabled = isChecked
+            preferenceUtils.saveBoolean(this, PreferenceUtils.IS_FEEDBACK_TYPE_ENABLED, isChecked)
         }
         emailField.isChecked = Shake.getReportConfiguration().isEnableEmailField
         emailField.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Email field: $isChecked")
             Shake.getReportConfiguration().isEnableEmailField = isChecked
+            preferenceUtils.saveBoolean(this, PreferenceUtils.IS_EMAIL_FIELD_ENABLED, isChecked)
         }
         inspectButton.isChecked = Shake.getReportConfiguration().isEnableInspectScreen
         inspectButton.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Inspect button: $isChecked")
             Shake.getReportConfiguration().isEnableInspectScreen = isChecked
+            preferenceUtils.saveBoolean(this, PreferenceUtils.IS_INSPECT_SCREEN_ENABLED, isChecked)
         }
 
         screenshot = binding.settingsAttachment
         screenshot.isChecked = Shake.getReportConfiguration().isScreenshotIncluded
         screenshot.setOnCheckedChangeListener { _, isChecked ->
-            Log.d("Settings", "Screenshoot included: $isChecked")
+            Log.d("Settings", "Screenshot included: $isChecked")
             Shake.getReportConfiguration().isScreenshotIncluded = isChecked
+            preferenceUtils.saveBoolean(this, PreferenceUtils.IS_SCREENSHOT_INCLUDED, isChecked)
         }
 
     }

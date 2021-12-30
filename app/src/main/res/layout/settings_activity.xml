@@ -4,7 +4,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="20dp"
         android:orientation="vertical"
         android:background="@color/shake_color_primary">
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/settings_layout_height">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
@@ -58,6 +58,27 @@
 
             </LinearLayout>
             <LinearLayout
+                android:orientation="vertical"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/settings_layout_height">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="@string/invocation_shaking" />
+
+                <SeekBar
+                    android:id="@+id/settings_shaking_threshold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:min="1"
+                    android:max="1000" />
+
+            </LinearLayout>
+            <LinearLayout
                 android:orientation="horizontal"
                 android:background="@android:color/transparent"
                 android:gravity="center_vertical"
@@ -66,7 +87,7 @@
 
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
@@ -87,7 +108,7 @@
 
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
@@ -129,7 +150,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/settings_layout_height">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
@@ -150,7 +171,7 @@
 
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
@@ -171,7 +192,7 @@
 
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
@@ -213,7 +234,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/settings_layout_height">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"

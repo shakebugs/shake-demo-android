@@ -21,4 +21,8 @@
         android:id="@+id/nav_feedback"
         android:name="com.shakebugs.demo.ui.feedback.FeedbackFragment"
         tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/nav_offline"
+        android:name="com.shakebugs.demo.ui.offline.OfflineFragment"
+        tools:layout="@layout/fragment_offline" />
 </navigation>

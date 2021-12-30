@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">Shake SDK demo app</string>
+    <string name="app_name">Shake demo</string>
 
     <!-- Preference Titles -->
     <string name="settings_invocations">Shake SDK is invoked with</string>
     <string name="invocation_shaking">Shaking</string>
+    <string name="shaking_threshold">Threshold</string>
     <string name="invocation_screenshot">Taking a screenshot</string>
     <string name="invocation_button">Floating button</string>
 
@@ -24,18 +25,24 @@
     <string name="menu_customize">Customizing Shake</string>
     <string name="menu_crash">Crash reporting</string>
     <string name="menu_feedback">Feedback center</string>
+    <string name="menu_offline">Offline</string>
 
     <string name="try_this">Now try this ✨</string>
+    <string name="try_it">Try it ✨</string>
     <string name="welcome_try_this_1">Shake your phone → write anything and tap Submit</string>
     <string name="welcome_try_this_2">On your computer visit <a href="https://shk.sh/demo">shk.sh/demo</a> to see how your submitted ticket looks like. Shake SDK has attached all that data automatically!</string>
     <string name="customize_try_this_1">Tap  ⋮  in the top right corner → SDK settings → change a thing or two</string>
     <string name="customize_try_this_2">Invoke Shake to see how it has changed</string>
     <string name="crash_try_this_1"><u>Tap me</u> to crash this app for fun</string>
     <string name="crash_try_this_2">On your computer visit shk.sh/demo to see how your crash report looks like. Shake SDK has attached all that data   automatically !</string>
-
+    <string name="offline_try_it_1">Turn on Aeroplane mode in your phone\'s Settings</string>
+    <string name="offline_try_it_2">Shake this app → write anything and tap Submit</string>
+    <string name="offline_try_it_3">On your computer visit shk.sh/demo</string>
+    <string name="offline_try_it_4">Turn off Aeroplane mode and notice how the reported ticket then <i>automatically</i> arrives to the public web Dashboard!</string>
+    
     <string name="welcome_title">Welcome to Shake demo app</string>
     <string name="learn_more">To learn about Shake, visit <a href="https://www.shakebugs.com/?utm_source=android_demo_app">shakebugs.com</a></string>
-    <string name="welcome_description">This Demo app is a playground where you can try what Shake SDK can do, withoout having to add it to your app.</string>
+    <string name="welcome_description">This Demo app is a playground where you can try what Shake SDK can do, without having to add it to your app.</string>
     <string name="welcome_bottom_text">Add Shake SDK to your internal app build and distribute it to your team, or a client. Whenever they notice a bug → they can just shake the phone to report a perfect bug in a few seconds &amp; without leaving your app.</string>
     <string name="welcome_bottom_text_2">For more ideas, visit the  navbar ☰ in the top left corner.</string>
 
@@ -57,5 +64,8 @@
     <string name="feedback_feedback_description">Make suggestions or report issues</string>
     <string name="feedback_password">Change password</string>
     <string name="feedback_sign_out">Sign out</string>
+
+    <string name="offline_title">Offline support ✈️</string>
+    <string name="offline_description">If your users have spotty or no internet connection, there\'s nothing to worry about. Shake will continue working perfectly.</string>
 
 </resources>
