@@ -68,7 +68,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    android:text="@string/invocation_shaking" />
+                    android:text="@string/shaking_threshold" />
 
                 <SeekBar
                     android:id="@+id/settings_shaking_threshold"
