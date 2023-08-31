@@ -9,6 +9,7 @@ import androidx.appcompat.widget.SwitchCompat
 import com.shakebugs.demo.R
 import com.shakebugs.demo.databinding.SettingsActivityBinding
 import com.shakebugs.demo.utils.PreferenceUtils
+import com.shakebugs.demo.utils.ShakeUtils
 import com.shakebugs.shake.Shake
 
 
@@ -83,23 +84,24 @@ class SettingsActivity : AppCompatActivity() {
         feedbackType = binding.settingsFeedbackType
         emailField = binding.settingsEmail
         inspectButton = binding.settingsInspect
-        feedbackType.isChecked = Shake.getReportConfiguration().isFeedbackTypeEnabled
+
+        feedbackType.isChecked = preferenceUtils.getBoolean(this, PreferenceUtils.IS_FEEDBACK_TYPE_ENABLED)
         feedbackType.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Feedback types: $isChecked")
-            Shake.getReportConfiguration().isFeedbackTypeEnabled = isChecked
             preferenceUtils.saveBoolean(this, PreferenceUtils.IS_FEEDBACK_TYPE_ENABLED, isChecked)
+            ShakeUtils.buildShakeForm(this, preferenceUtils)
         }
-        emailField.isChecked = Shake.getReportConfiguration().isEnableEmailField
+        emailField.isChecked = preferenceUtils.getBoolean(this, PreferenceUtils.IS_EMAIL_FIELD_ENABLED)
         emailField.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Email field: $isChecked")
-            Shake.getReportConfiguration().isEnableEmailField = isChecked
             preferenceUtils.saveBoolean(this, PreferenceUtils.IS_EMAIL_FIELD_ENABLED, isChecked)
+            ShakeUtils.buildShakeForm(this, preferenceUtils)
         }
-        inspectButton.isChecked = Shake.getReportConfiguration().isEnableInspectScreen
+        inspectButton.isChecked = preferenceUtils.getBoolean(this, PreferenceUtils.IS_INSPECT_SCREEN_ENABLED)
         inspectButton.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Inspect button: $isChecked")
-            Shake.getReportConfiguration().isEnableInspectScreen = isChecked
             preferenceUtils.saveBoolean(this, PreferenceUtils.IS_INSPECT_SCREEN_ENABLED, isChecked)
+            ShakeUtils.buildShakeForm(this, preferenceUtils)
         }
 
         screenshot = binding.settingsAttachment

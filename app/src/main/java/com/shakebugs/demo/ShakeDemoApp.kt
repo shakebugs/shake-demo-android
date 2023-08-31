@@ -1,8 +1,8 @@
 package com.shakebugs.demo
 
 import android.app.Application
-import com.shakebugs.demo.BuildConfig
 import com.shakebugs.demo.utils.PreferenceUtils
+import com.shakebugs.demo.utils.ShakeUtils
 import com.shakebugs.shake.Shake
 import java.util.*
 
@@ -29,7 +29,6 @@ class ShakeDemoApp : Application() {
             preferenceUtils.saveBoolean(this, PreferenceUtils.IS_EMAIL_FIELD_ENABLED, false)
             preferenceUtils.saveBoolean(this, PreferenceUtils.IS_INSPECT_SCREEN_ENABLED, false)
             preferenceUtils.saveBoolean(this, PreferenceUtils.IS_FEEDBACK_TYPE_ENABLED, false)
-
         }
 
         Shake.setCrashReportingEnabled(true)
@@ -47,9 +46,8 @@ class ShakeDemoApp : Application() {
         Shake.getReportConfiguration().isAutoVideoRecording = false
         Shake.getReportConfiguration().isScreenshotIncluded = preferenceUtils.getBoolean(this, PreferenceUtils.IS_SCREENSHOT_INCLUDED)
 
-        Shake.getReportConfiguration().isEnableEmailField = preferenceUtils.getBoolean(this, PreferenceUtils.IS_EMAIL_FIELD_ENABLED)
-        Shake.getReportConfiguration().isEnableInspectScreen = preferenceUtils.getBoolean(this, PreferenceUtils.IS_INSPECT_SCREEN_ENABLED)
-        Shake.getReportConfiguration().isFeedbackTypeEnabled = preferenceUtils.getBoolean(this, PreferenceUtils.IS_FEEDBACK_TYPE_ENABLED)
+        ShakeUtils.buildShakeForm(this, preferenceUtils)
+
         Shake.setShowIntroMessage(true)
 
         Shake.start(this, BuildConfig.CLIENT_ID, BuildConfig.CLIENT_SECRET)
