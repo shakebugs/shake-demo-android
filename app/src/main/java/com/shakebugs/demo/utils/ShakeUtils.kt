@@ -20,11 +20,11 @@ object ShakeUtils {
         val showEmailField = preferenceUtils.getBoolean(context, IS_EMAIL_FIELD_ENABLED)
         val showInspectButton = preferenceUtils.getBoolean(context, IS_INSPECT_SCREEN_ENABLED)
 
-        if (!showFeedbackPicker) {
-            shakeForm.components.remove(shakeForm.components.find { it is ShakePicker })
-        }
         if (showEmailField) {
             shakeForm.components.add(2, ShakeEmail("Email", "Email", required = true))
+        }
+        if (!showFeedbackPicker) {
+            shakeForm.components.remove(shakeForm.components.find { it is ShakePicker })
         }
         if (!showInspectButton) {
             shakeForm.components.remove(shakeForm.components.find { it is ShakeInspectButton })
