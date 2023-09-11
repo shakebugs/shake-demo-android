@@ -2,7 +2,6 @@ package com.shakebugs.demo.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.view.MotionEvent
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
@@ -17,16 +16,16 @@ class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: SettingsActivityBinding
 
-    private lateinit var invokeShaking : SwitchCompat
-    private lateinit var shakingThreshold : SeekBar
-    private lateinit var invokeScreenshot : SwitchCompat
-    private lateinit var invokeButton : SwitchCompat
+    private lateinit var invokeShaking: SwitchCompat
+    private lateinit var shakingThreshold: SeekBar
+    private lateinit var invokeScreenshot: SwitchCompat
+    private lateinit var invokeButton: SwitchCompat
 
-    private lateinit var feedbackType : SwitchCompat
-    private lateinit var emailField : SwitchCompat
-    private lateinit var inspectButton : SwitchCompat
+    private lateinit var feedbackType: SwitchCompat
+    private lateinit var emailField: SwitchCompat
+    private lateinit var inspectButton: SwitchCompat
 
-    private lateinit var screenshot : SwitchCompat
+    private lateinit var screenshot: SwitchCompat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +63,11 @@ class SettingsActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
                 Log.d("Settings", "Shake sensitivity is set to: ${seekBar!!.progress}")
                 Shake.getReportConfiguration().shakingThreshold = seekBar.progress
-                preferenceUtils.saveInt(applicationContext, PreferenceUtils.SHAKING_THRESHOLD, seekBar.progress)
+                preferenceUtils.saveInt(
+                    applicationContext,
+                    PreferenceUtils.SHAKING_THRESHOLD,
+                    seekBar.progress
+                )
             }
 
         })
@@ -85,19 +88,22 @@ class SettingsActivity : AppCompatActivity() {
         emailField = binding.settingsEmail
         inspectButton = binding.settingsInspect
 
-        feedbackType.isChecked = preferenceUtils.getBoolean(this, PreferenceUtils.IS_FEEDBACK_TYPE_ENABLED)
+        feedbackType.isChecked =
+            preferenceUtils.getBoolean(this, PreferenceUtils.IS_FEEDBACK_TYPE_ENABLED)
         feedbackType.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Feedback types: $isChecked")
             preferenceUtils.saveBoolean(this, PreferenceUtils.IS_FEEDBACK_TYPE_ENABLED, isChecked)
             ShakeUtils.buildShakeForm(this, preferenceUtils)
         }
-        emailField.isChecked = preferenceUtils.getBoolean(this, PreferenceUtils.IS_EMAIL_FIELD_ENABLED)
+        emailField.isChecked =
+            preferenceUtils.getBoolean(this, PreferenceUtils.IS_EMAIL_FIELD_ENABLED)
         emailField.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Email field: $isChecked")
             preferenceUtils.saveBoolean(this, PreferenceUtils.IS_EMAIL_FIELD_ENABLED, isChecked)
             ShakeUtils.buildShakeForm(this, preferenceUtils)
         }
-        inspectButton.isChecked = preferenceUtils.getBoolean(this, PreferenceUtils.IS_INSPECT_SCREEN_ENABLED)
+        inspectButton.isChecked =
+            preferenceUtils.getBoolean(this, PreferenceUtils.IS_INSPECT_SCREEN_ENABLED)
         inspectButton.setOnCheckedChangeListener { _, isChecked ->
             Log.d("Settings", "Inspect button: $isChecked")
             preferenceUtils.saveBoolean(this, PreferenceUtils.IS_INSPECT_SCREEN_ENABLED, isChecked)
@@ -111,17 +117,11 @@ class SettingsActivity : AppCompatActivity() {
             Shake.getReportConfiguration().isScreenshotIncluded = isChecked
             preferenceUtils.saveBoolean(this, PreferenceUtils.IS_SCREENSHOT_INCLUDED, isChecked)
         }
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
-    }
-
-    override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-        Shake.handleTouchEvent(event, this)
-        return super.dispatchTouchEvent(event)
     }
 
     override fun finish() {
