@@ -50,7 +50,7 @@ class ShakeDemoApp : Application() {
 
         Shake.setShowIntroMessage(true)
 
-        Shake.start(this, BuildConfig.CLIENT_ID, BuildConfig.CLIENT_SECRET)
+        Shake.start(this, BuildConfig.SHAKE_API_KEY)
 
         Shake.registerUser(preferenceUtils.getString(this, PreferenceUtils.PREF_APP_UUID))
         Shake.updateUserMetadata(mapOf(

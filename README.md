@@ -54,7 +54,7 @@ This app is intended as a playground for what Shake can do, without having to ad
 ## How to run 
 
 1. Clone the GitHub repository and open the project. 
-2. Check and make sure `playStoreDebug` variant is active.
+2. Set `shakeApiKey` variable in `local.properties` file.
 3. Build the app & enjoy. 
 
 ## Authors
